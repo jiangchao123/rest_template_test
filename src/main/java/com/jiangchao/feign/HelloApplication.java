@@ -24,8 +24,13 @@ public class HelloApplication {
     }
 
     @Bean
-    @LoadBalanced
     RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    @LoadBalanced
+    @Bean
+    RestTemplate loadBalanced() {
         return new RestTemplate();
     }
 }

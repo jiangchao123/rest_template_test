@@ -12,8 +12,6 @@
 ##health.config.enabled=false
 
 spring:
-  application:
-    name: dialog-api
   profiles:
     active: localtest
   cloud:
@@ -25,17 +23,3 @@ spring:
           watch:
             #禁止自动检测consul KV存储中的配置参数，并 refresh spring context，默认值为打开
             enabled: false
-hystrix:
-  metrics:
-    enabled: true
-  command:
-    "HelloClient#getAnswerResult()":
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 2000
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 100
